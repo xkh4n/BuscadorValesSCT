@@ -71,21 +71,8 @@ El **Buscador de Comprobantes SCT** es una herramienta que permite buscar y extr
 
 Al abrir la aplicación por primera vez, verá la siguiente interfaz:
 
-```
-┌─────────────────────────────────────────────────────────┐
-│         BÚSQUEDA DE COMPROBANTES DE VENTA v1.3.3       │
-├─────────────────────────────────────────────────────────┤
-│  Datos de búsqueda          │  Resultado de la búsqueda │
-│                             │                          │
-│  📅 Fecha: [DatePicker]     │  (Aquí se mostrarán       │
-│  💳 Tarjeta: [______]       │   los comprobantes         │
-│  💰 Monto: [______]         │    encontrados)            │
-│  📁 Archivo Log: [______]   │                          │
-│                             │                          │
-│  [BUSCAR] [SIGUIENTE]       │                          │
-│  [GUARDAR] [LIMPIAR]        │                          │
-└─────────────────────────────────────────────────────────┘
-```
+
+![Interfaz principal de la aplicación](../images/interfaz01.png)
 
 ### Configuración Inicial
 
