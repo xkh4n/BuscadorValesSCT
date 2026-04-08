@@ -46,14 +46,14 @@ python -m PyInstaller --onedir --windowed --add-data "imperial.ico;." --name=Bus
 
 | Documento | Descripción |
 |-----------|-------------|
-| [Manual de Usuario](Manual_de_Usuario_v1.3.3.md) | Guía completa de uso, funcionalidades y preguntas frecuentes |
-| [Release Notes](Release_Notes_v1.3.3.md) | Novedades, correcciones y cambios de la versión actual |
+| [Manual de Usuario](docs/Manual_de_Usuario_v1.3.3.md) | Guía completa de uso, funcionalidades y preguntas frecuentes |
+| [Release Notes](docs/Release_Notes_v1.3.3.md) | Novedades, correcciones y cambios de la versión actual |
 
 ### Para Personal Técnico
 
 | Documento | Descripción |
 |-----------|-------------|
-| [Documentación Técnica](Documentacion_Tecnica_v1.3.3.md) | Arquitectura, lógica de búsqueda, compilación y troubleshooting |
+| [Documentación Técnica](docs/Documentacion_Tecnica_v1.3.3.md) | Arquitectura, lógica de búsqueda, compilación y troubleshooting |
 
 ---
 
