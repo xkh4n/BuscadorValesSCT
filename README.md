@@ -2,10 +2,10 @@
 
 ## Descripción
 
-Herramienta de escritorio para buscar y extraer comprobantes de venta desde archivos de log del sistema SCT. Permite localizar transacciones específicas utilizando filtros de fecha, tarjeta y monto, con soporte para búsqueda múltiple y navegación entre resultados.
+Herramienta de escritorio para buscar, extraer e imprimir comprobantes de venta desde archivos de log del sistema SCT. Permite localizar transacciones específicas utilizando filtros de fecha, tarjeta y monto, con soporte para búsqueda múltiple, navegación entre resultados e impresión directa en impresoras de recibos.
 
-**Versión actual:** 1.3.3  
-**Plataforma:** Windows 10/11 (64 bits)  
+**Versión actual:** 1.4.0
+**Plataforma:** Windows 10/11 (64 bits)
 **Licencia:** MIT
 
 ---
@@ -23,7 +23,7 @@ Herramienta de escritorio para buscar y extraer comprobantes de venta desde arch
 
 ```bash
 # Clonar o copiar el proyecto
-cd C:\SCTCliente
+cd BuscadorValesSCT
 
 # Instalar dependencias
 pip install tkcalendar pyinstaller pywin32
@@ -31,11 +31,8 @@ pip install tkcalendar pyinstaller pywin32
 # Ejecutar directamente desde Python
 python nuevoBuscador.py
 
-# Compilar ejecutable
-python -m PyInstaller --onedir --windowed --add-data "imperial.ico;." --name=BuscadorComprobantes nuevoBuscador.py
-
-# Compilar instalador
-"C:\Program Files (x86)\Inno Setup 6\ISCC.exe" installer.iss
+# Compilar ejecutable e instalador (con versionado automático)
+.\compiler.ps1
 ```
 
 ---
@@ -46,14 +43,14 @@ python -m PyInstaller --onedir --windowed --add-data "imperial.ico;." --name=Bus
 
 | Documento | Descripción |
 |-----------|-------------|
-| [Manual de Usuario](docs/Manual_de_Usuario_v1.3.3.md) | Guía completa de uso, funcionalidades y preguntas frecuentes |
-| [Release Notes](docs/Release_Notes_v1.3.3.md) | Novedades, correcciones y cambios de la versión actual |
+| [Manual de Usuario](docs/Manual_de_Usuario_v1.4.0.md) | Guía completa de uso, funcionalidades y preguntas frecuentes |
+| [Release Notes](docs/Release_Notes_v1.4.0.md) | Novedades, correcciones y cambios de la versión actual |
 
 ### Para Personal Técnico
 
 | Documento | Descripción |
 |-----------|-------------|
-| [Documentación Técnica](docs/Documentacion_Tecnica_v1.3.3.md) | Arquitectura, lógica de búsqueda, compilación y troubleshooting |
+| [Documentación Técnica](docs/Documentacion_Tecnica_v1.4.0.md) | Arquitectura, lógica de búsqueda, compilación y troubleshooting |
 
 ---
 
@@ -63,6 +60,12 @@ python -m PyInstaller --onedir --windowed --add-data "imperial.ico;." --name=Bus
 - Búsqueda por **fecha**, **últimos 4 dígitos de tarjeta** y **monto**
 - Visualización completa del comprobante encontrado
 - Extracción automática de **hora** y **número de operación**
+
+### 🖨️ Impresión Directa
+- Botón dedicado con ícono de impresora
+- Impresión en impresoras de recibos (104mm)
+- Solo imprime el contenido del vale (sin metadatos adicionales)
+- Usa la impresora predeterminada del sistema
 
 ### 📊 Búsqueda Múltiple
 - Encuentra **todas las transacciones** con los mismos datos
@@ -91,7 +94,7 @@ python -m PyInstaller --onedir --windowed --add-data "imperial.ico;." --name=Bus
 
 ```
 ┌─────────────────────────────────────────────────────────┐
-│     Buscador de Comprobantes de Venta v1.3.3           │
+│     Buscador de Comprobantes de Venta v1.4.0           │
 ├─────────────────────────────────────────────────────────┤
 │  Datos de búsqueda          │  Resultado de la búsqueda │
 │                             │                          │
@@ -101,10 +104,11 @@ python -m PyInstaller --onedir --windowed --add-data "imperial.ico;." --name=Bus
 │  📁 Archivo Log: [____]     │  Tarjeta: ***6018         │
 │                   [Examinar]│  Monto: $18.990           │
 │                             │  ────────────────────     │
-│  ┌──────────────────────┐   │  COMPROBANTE DE VENTA...  │
-│  │  [BUSCAR] [SIGUIENTE]│   │                          │
-│  │  [GUARDAR] [LIMPIAR] │   │                          │
-│  └──────────────────────┘   │                          │
+│  ┌────────────────────────┐ │  COMPROBANTE DE VENTA...  │
+│  │[BUSCAR][SIGUIENTE]     │ │                          │
+│  │[GUARDAR][🖨️IMPRIMIR]   │ │                          │
+│  │[LIMPIAR]               │ │                          │
+│  └────────────────────────┘ │                          │
 │                             │                          │
 │  ┌────────────────────────┐ │                          │
 │  │[◀️ANTERIOR][2 de 5][SIG▶️]│ │                          │
@@ -220,5 +224,5 @@ Este proyecto está bajo la Licencia MIT. Consulte el archivo LICENSE para más 
 
 ---
 
-**Última actualización:** 6 de abril de 2026  
-**Versión del documento:** 1.3.3
+**Última actualización:** 8 de abril de 2026
+**Versión del documento:** 1.4.0

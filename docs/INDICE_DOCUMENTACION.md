@@ -1,6 +1,6 @@
 # 📚 Índice de Documentación
 
-## Buscador de Comprobantes SCT v1.3.3
+## Buscador de Comprobantes SCT v1.4.0
 
 ---
 
@@ -11,21 +11,21 @@
 | Documento | Descripción | Para Quién |
 |-----------|-------------|------------|
 | **[RESUMEN_RAPIDO.md](RESUMEN_RAPIDO.md)** | Guía rápida de 1 página | Usuarios que necesitan referencia rápida |
-| **[Manual_de_Usuario_v1.3.3.md](Manual_de_Usuario_v1.3.3.md)** | Manual completo paso a paso | Usuarios nuevos y referencia detallada |
-| **[Release_Notes_v1.3.3.md](Release_Notes_v1.3.3.md)** | Novedades y correcciones | Todos los usuarios |
+| **[Manual_de_Usuario_v1.4.0.md](Manual_de_Usuario_v1.4.0.md)** | Manual completo paso a paso | Usuarios nuevos y referencia detallada |
+| **[Release_Notes_v1.4.0.md](Release_Notes_v1.4.0.md)** | Novedades y correcciones | Todos los usuarios |
 
 ### Para Personal Técnico
 
 | Documento | Descripción | Para Quién |
 |-----------|-------------|------------|
-| **[Documentacion_Tecnica_v1.3.3.md](Documentacion_Tecnica_v1.3.3.md)** | Arquitectura, código y compilación | Desarrolladores, soporte técnico |
+| **[Documentacion_Tecnica_v1.4.0.md](Documentacion_Tecnica_v1.4.0.md)** | Arquitectura, código y compilación | Desarrolladores, soporte técnico |
 | **[ENTREGA_PRODUCCION.md](ENTREGA_PRODUCCION.md)** | Documento formal de entrega | Producción, QA, gerencia |
 
 ### General
 
 | Documento | Descripción | Para Quién |
 |-----------|-------------|------------|
-| **[README.md](README.md)** | Presentación del proyecto | Todos los interesados |
+| **[README.md](../README.md)** | Presentación del proyecto | Todos los interesados |
 
 ---
 
@@ -36,16 +36,18 @@
 | Necesito... | Documento |
 |-------------|-----------|
 | Aprender a usar la aplicación rápidamente | [RESUMEN_RAPIDO.md](RESUMEN_RAPIDO.md) |
-| Manual completo con ejemplos | [Manual_de_Usuario_v1.3.3.md](Manual_de_Usuario_v1.3.3.md) |
-| Saber qué hay de nuevo | [Release_Notes_v1.3.3.md](Release_Notes_v1.3.3.md) |
+| Manual completo con ejemplos | [Manual_de_Usuario_v1.4.0.md](Manual_de_Usuario_v1.4.0.md) |
+| Saber qué hay de nuevo | [Release_Notes_v1.4.0.md](Release_Notes_v1.4.0.md) |
+| Aprender a imprimir comprobantes | [Manual_de_Usuario_v1.4.0.md](Manual_de_Usuario_v1.4.0.md) |
 
 ### Soy Personal Técnico
 
 | Necesito... | Documento |
 |-------------|-----------|
-| Entender cómo funciona el código | [Documentacion_Tecnica_v1.3.3.md](Documentacion_Tecnica_v1.3.3.md) |
-| Compilar o modificar la aplicación | [Documentacion_Tecnica_v1.3.3.md](Documentacion_Tecnica_v1.3.3.md) |
-| Solucionar problemas técnicos | [Documentacion_Tecnica_v1.3.3.md](Documentacion_Tecnica_v1.3.3.md) |
+| Entender cómo funciona el código | [Documentacion_Tecnica_v1.4.0.md](Documentacion_Tecnica_v1.4.0.md) |
+| Compilar o modificar la aplicación | [Documentacion_Tecnica_v1.4.0.md](Documentacion_Tecnica_v1.4.0.md) |
+| Solucionar problemas técnicos | [Documentacion_Tecnica_v1.4.0.md](Documentacion_Tecnica_v1.4.0.md) |
+| Usar el script de compilación | [Documentacion_Tecnica_v1.4.0.md](Documentacion_Tecnica_v1.4.0.md) |
 
 ### Soy de Producción/QA/Gerencia
 
@@ -59,8 +61,8 @@
 
 | Necesito... | Documento |
 |-------------|-----------|
-| Vista general del proyecto | [README.md](README.md) |
-| Entender qué hace la aplicación | [README.md](README.md) |
+| Vista general del proyecto | [README.md](../README.md) |
+| Entender qué hace la aplicación | [README.md](../README.md) |
 
 ---
 
@@ -73,7 +75,7 @@
 - ✅ Atajos de teclado
 - ✅ Dónde buscar ayuda
 
-### Manual_de_Usuario_v1.3.3.md
+### Manual_de_Usuario_v1.4.0.md
 - ✅ Introducción y propósito
 - ✅ Instalación paso a paso
 - ✅ Primer uso
@@ -81,10 +83,11 @@
 - ✅ Búsqueda básica y múltiple
 - ✅ Navegación entre resultados
 - ✅ Guardar comprobantes
+- ✅ **IMPRESIÓN DE COMPROBANTES** (NUEVO)
 - ✅ Preguntas frecuentes completas
 - ✅ Información de soporte
 
-### Documentacion_Tecnica_v1.3.3.md
+### Documentacion_Tecnica_v1.4.0.md
 - ✅ Arquitectura del sistema
 - ✅ Requisitos técnicos
 - ✅ Estructura del proyecto
@@ -92,11 +95,13 @@
 - ✅ Lógica de búsqueda (algoritmo)
 - ✅ Formato del archivo de log
 - ✅ Compilación y distribución
+- ✅ **Script compiler.ps1 con versionado automático**
+- ✅ **Logs de compilación**
 - ✅ Variables de entorno
 - ✅ Solución de problemas técnicos
 - ✅ Historial de versiones
 
-### Release_Notes_v1.3.3.md
+### Release_Notes_v1.4.0.md
 - ✅ Resumen de cambios
 - ✅ Novedades de la versión
 - ✅ Correcciones aplicadas
@@ -104,6 +109,7 @@
 - ✅ Compatibilidad
 - ✅ Instalación y actualización
 - ✅ Funcionalidades completas
+- ✅ Guía de compilación
 - ✅ Problemas conocidos
 - ✅ Roadmap futuro
 
@@ -137,19 +143,24 @@
 ### Desde la Carpeta del Proyecto
 
 ```
-C:\SCTCliente\docs\
-├── README.md                  ← Punto de partida
-├── RESUMEN_RAPIDO.md          ← Referencia rápida
-├── Manual_de_Usuario_v1.3.3.md
-├── Documentacion_Tecnica_v1.3.3.md
-├── Release_Notes_v1.3.3.md
-└── ENTREGA_PRODUCCION.md
+C:\Proyectos\Desarrollo\Python\BuscadorValesSCT\
+├── README.md                      ← Punto de partida
+├── compiler.ps1                   ← Script de compilación
+├── compiler-bck.ps1               ← Backup del script anterior
+├── docs\
+│   ├── README.md                  ← Índice (este archivo)
+│   ├── RESUMEN_RAPIDO.md          ← Referencia rápida
+│   ├── Manual_de_Usuario_v1.4.0.md
+│   ├── Documentacion_Tecnica_v1.4.0.md
+│   ├── Release_Notes_v1.4.0.md
+│   └── ENTREGA_PRODUCCION.md
+└── build_logs\                    ← Logs de compilación
 ```
 
 ### Para Abrir un Documento
 
 **Windows:**
-1. Navegar a `C:\SCTCliente\docs\`
+1. Navegar a la carpeta `docs\`
 2. Doble clic en el archivo `.md`
 3. Se abrirá en el visor de Markdown configurado
 
@@ -169,6 +180,6 @@ Si necesita información adicional:
 
 ---
 
-**Índice de Documentación**  
-**Buscador de Comprobantes SCT v1.3.3**  
-**Última actualización:** 6 de abril de 2026
+**Índice de Documentación**
+**Buscador de Comprobantes SCT v1.4.0**
+**Última actualización:** 8 de abril de 2026

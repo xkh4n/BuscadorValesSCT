@@ -60,7 +60,7 @@ class BuscadorComprobantes:
         self.root = root
         
         # Versión de la aplicación
-        self.APP_VERSION = "1.3.3"
+        self.APP_VERSION = "1.5.4"
         
         self.root.title(f"Buscador de Comprobantes de Pago v{self.APP_VERSION}")
         self.root.geometry("900x700")

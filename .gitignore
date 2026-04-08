@@ -4,6 +4,7 @@ __pycache__/
 *$py.class
 
 # C extensions
+build_logs/
 *.so
 installer.iss
 version.txt
