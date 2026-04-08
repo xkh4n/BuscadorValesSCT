@@ -202,19 +202,15 @@ Total encontrados: 3 | Mostrando: #1
 
 Cuando se encuentran **2 o más comprobantes**, aparece un panel de navegación:
 
-```
-┌─────────────────────────────────────────────┐
-│  [◀️ ANTERIOR]  [Vale 2 de 5]  [SIGUIENTE ▶️] │
-└─────────────────────────────────────────────┘
-```
+![Interfaz principal de la aplicación](../images/interfaz02.png)
 
 ### Botones de Navegación
 
 | Botón | Función | Estado |
 |-------|---------|--------|
-| **◀️ ANTERIOR** | Muestra el comprobante anterior | Deshabilitado en el primer vale |
-| **SIGUIENTE ▶️** | Muestra el siguiente comprobante | Deshabilitado en el último vale |
-| **Label central** | Muestra posición actual | Ej: "Vale 2 de 5" |
+| **![Interfaz principal de la aplicación](../images/interfaz03.png)** | Muestra el comprobante anterior | Deshabilitado en el primer vale |
+| **![Interfaz principal de la aplicación](../images/interfaz04.png)** | Muestra el siguiente comprobante | Deshabilitado en el último vale |
+| **![Interfaz principal de la aplicación](../images/interfaz05.png)** | Muestra posición actual | Ej: "Vale 2 de 5" |
 
 ### Flujo de Navegación
 
@@ -336,7 +332,7 @@ Sí, la aplicación funciona completamente offline. No requiere conexión a inte
 ### Contacto
 
 - **Desarrollador:** Osvaldo Rojas G.
-- **Repositorio:** https://github.com/osvaldorojasg
+- **Repositorio:** https://github.com/xkh4n/BuscadorValesSCT
 
 ### Información de Versión
 
