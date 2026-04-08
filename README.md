@@ -26,7 +26,7 @@ Herramienta de escritorio para buscar y extraer comprobantes de venta desde arch
 cd C:\SCTCliente
 
 # Instalar dependencias
-pip install tkcalendar pyinstaller
+pip install tkcalendar pyinstaller pywin32
 
 # Ejecutar directamente desde Python
 python nuevoBuscador.py

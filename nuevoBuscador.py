@@ -1,5 +1,6 @@
 import os
 import re
+import subprocess
 from pathlib import Path
 from datetime import datetime, timedelta
 import tkinter as tk
@@ -7,6 +8,8 @@ from tkinter import ttk, filedialog, messagebox
 import threading
 from tkcalendar import DateEntry, Calendar
 import sys
+import win32print
+import win32api
 
 # Obtener ruta base para recursos (funciona con PyInstaller)
 def get_resource_path(relative_path):
@@ -59,21 +62,21 @@ class BuscadorComprobantes:
         # Versión de la aplicación
         self.APP_VERSION = "1.3.3"
         
-        self.root.title(f"Buscador de Comprobantes de Venta v{self.APP_VERSION}")
+        self.root.title(f"Buscador de Comprobantes de Pago v{self.APP_VERSION}")
         self.root.geometry("900x700")
         self.root.resizable(True, True)
         
         # Configurar ícono de la ventana
         # Intentar múltiples rutas para asegurar que funcione con PyInstaller
-        icon_path = get_resource_path('imperial.ico')
+        icon_path = get_resource_path('images\imperial.ico')
         
         # Si no encuentra el ícono en _MEIPASS, intentar ruta relativa
         if not os.path.exists(icon_path):
-            icon_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'imperial.ico')
+            icon_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'images\imperial.ico')
         
         # Si aún no existe, intentar desde el directorio del ejecutable
         if not os.path.exists(icon_path) and hasattr(sys, '_MEIPASS'):
-            icon_path = os.path.join(os.path.dirname(sys.executable), 'imperial.ico')
+            icon_path = os.path.join(os.path.dirname(sys.executable), 'images\imperial.ico')
         
         if os.path.exists(icon_path):
             try:
@@ -141,7 +144,7 @@ class BuscadorComprobantes:
         main_frame.rowconfigure(2, weight=1)
         
         # Título
-        titulo = tk.Label(main_frame, text="BÚSQUEDA DE COMPROBANTES DE VENTA",
+        titulo = tk.Label(main_frame, text="BÚSQUEDA DE COMPROBANTES DE PAGO",
                          font=('Arial', 16, 'bold'), fg=self.COLOR_TITULO, bg=self.COLOR_FONDO)
         titulo.grid(row=0, column=0, columnspan=3, pady=10)
         
@@ -221,6 +224,10 @@ class BuscadorComprobantes:
         self.guardar_btn = ttk.Button(button_frame, text="GUARDAR", command=self.guardar_comprobante,
                                       width=10, state='disabled')
         self.guardar_btn.pack(side=tk.LEFT, padx=5)
+
+        self.imprimir_btn = ttk.Button(button_frame, text="🖨️ IMPRIMIR", command=self.imprimir_comprobante,
+                                       width=12, state='disabled')
+        self.imprimir_btn.pack(side=tk.LEFT, padx=5)
 
         ttk.Button(button_frame, text="LIMPIAR", command=self.limpiar_resultados, width=10).pack(side=tk.LEFT, padx=5)
 
@@ -374,6 +381,7 @@ class BuscadorComprobantes:
         self.buscar_btn.config(state='disabled')
         self.siguiente_btn.config(state='disabled')
         self.guardar_btn.config(state='disabled')
+        self.imprimir_btn.config(state='disabled')
         
         if hasattr(self, 'progress_bar'):
             self.progress_bar.start(10)
@@ -716,6 +724,7 @@ class BuscadorComprobantes:
             if hasattr(self, 'status_label'):
                 self.status_label.config(text="❌ Error en la búsqueda")
             self.siguiente_btn.config(state='disabled')
+            self.imprimir_btn.config(state='disabled')
             # Ocultar frame de navegación en caso de error
             self.nav_frame.grid_remove()
             messagebox.showerror("Error", resultado["error"])
@@ -845,6 +854,7 @@ class BuscadorComprobantes:
             
             self.text_resultados.see(tk.END)
             self.guardar_btn.config(state='normal')
+            self.imprimir_btn.config(state='normal')
             messagebox.showinfo("Éxito", 
                 f"¡Comprobante encontrado exitosamente!\n\n"
                 f"Total encontrados: {total_vales}\n"
@@ -916,7 +926,70 @@ class BuscadorComprobantes:
             return False
         
         return True
-    
+
+    def imprimir_comprobante(self):
+        """Imprime el comprobante actual en una impresora de recibos"""
+        if not self.vales_encontrados or self.vale_actual_index < 0:
+            messagebox.showwarning("Imprimir", "No hay un comprobante para imprimir")
+            return
+
+        try:
+            vale = self.vales_encontrados[self.vale_actual_index]
+            
+            # Obtener la impresora predeterminada
+            impresora_predeterminada = win32print.GetDefaultPrinter()
+            
+            # Preguntar al usuario si desea usar la impresora predeterminada
+            respuesta = messagebox.askyesno(
+                "Imprimir Comprobante",
+                f"Se imprimirá en la impresora:\n{impresora_predeterminada}\n\n"
+                f"Tamaño de papel: 104mm Receipt\n\n"
+                f"¿Desea continuar?"
+            )
+            
+            if not respuesta:
+                return
+
+            # Construir el contenido del comprobante (solo el texto del vale, sin metadatos)
+            contenido_impresion = []
+            
+            for linea in vale["lineas"]:
+                if " - Line " in linea:
+                    contenido = linea.split(" - Line ", 1)[1]
+                    contenido_impresion.append(contenido)
+                else:
+                    contenido_impresion.append(linea)
+            
+            # Unir todas las líneas
+            texto_completo = "\n".join(contenido_impresion) + "\n"
+            
+            # Crear archivo temporal en el directorio de la aplicación (más fácil de limpiar manualmente)
+            import tempfile
+            app_dir = os.path.dirname(os.path.abspath(__file__))
+            nombre_archivo = f"_tmp_imprimir_{datetime.now().strftime('%Y%m%d_%H%M%S')}.txt"
+            ruta_archivo = os.path.join(app_dir, nombre_archivo)
+            
+            with open(ruta_archivo, 'w', encoding='utf-8') as f:
+                f.write(texto_completo)
+            
+            # Enviar a la impresora
+            win32api.ShellExecute(
+                0,
+                "printto",
+                ruta_archivo,
+                f'"{impresora_predeterminada}"',
+                ".",
+                0
+            )
+            
+            if hasattr(self, 'status_label'):
+                self.status_label.config(text=f"🖨️ Imprimiendo comprobante #{self.vale_actual_index + 1}...")
+            
+            messagebox.showinfo("Éxito", "Comprobante enviado a impresión")
+            
+        except Exception as e:
+            messagebox.showerror("Error", f"Error al imprimir:\n{str(e)}")
+
     def guardar_comprobante(self):
         """Guarda todos los comprobantes encontrados en la ubicación seleccionada por el usuario"""
         if not self.vales_encontrados:
@@ -1035,6 +1108,7 @@ class BuscadorComprobantes:
         self.lineas_comprobante = None
         self.guardar_btn.config(state='disabled')
         self.siguiente_btn.config(state='disabled')
+        self.imprimir_btn.config(state='disabled')
         
         # Actualizar status_label solo si existe
         if hasattr(self, 'status_label'):
