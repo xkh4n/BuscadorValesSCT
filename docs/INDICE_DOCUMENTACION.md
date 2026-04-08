@@ -1,6 +1,6 @@
 # 📚 Índice de Documentación
 
-## Buscador de Comprobantes SCT v1.4.0
+## Buscador de Comprobantes SCT v1.5.4
 
 ---
 
@@ -11,14 +11,14 @@
 | Documento | Descripción | Para Quién |
 |-----------|-------------|------------|
 | **[RESUMEN_RAPIDO.md](RESUMEN_RAPIDO.md)** | Guía rápida de 1 página | Usuarios que necesitan referencia rápida |
-| **[Manual_de_Usuario_v1.4.0.md](Manual_de_Usuario_v1.4.0.md)** | Manual completo paso a paso | Usuarios nuevos y referencia detallada |
-| **[Release_Notes_v1.4.0.md](Release_Notes_v1.4.0.md)** | Novedades y correcciones | Todos los usuarios |
+| **[Manual_de_Usuario_v1.5.4.md](Manual_de_Usuario_v1.5.4.md)** | Manual completo paso a paso | Usuarios nuevos y referencia detallada |
+| **[Release_Notes_v1.5.4.md](Release_Notes_v1.5.4.md)** | Novedades y correcciones | Todos los usuarios |
 
 ### Para Personal Técnico
 
 | Documento | Descripción | Para Quién |
 |-----------|-------------|------------|
-| **[Documentacion_Tecnica_v1.4.0.md](Documentacion_Tecnica_v1.4.0.md)** | Arquitectura, código y compilación | Desarrolladores, soporte técnico |
+| **[Documentacion_Tecnica_v1.5.4.md](Documentacion_Tecnica_v1.5.4.md)** | Arquitectura, código y compilación | Desarrolladores, soporte técnico |
 | **[ENTREGA_PRODUCCION.md](ENTREGA_PRODUCCION.md)** | Documento formal de entrega | Producción, QA, gerencia |
 
 ### General
@@ -36,18 +36,18 @@
 | Necesito... | Documento |
 |-------------|-----------|
 | Aprender a usar la aplicación rápidamente | [RESUMEN_RAPIDO.md](RESUMEN_RAPIDO.md) |
-| Manual completo con ejemplos | [Manual_de_Usuario_v1.4.0.md](Manual_de_Usuario_v1.4.0.md) |
-| Saber qué hay de nuevo | [Release_Notes_v1.4.0.md](Release_Notes_v1.4.0.md) |
-| Aprender a imprimir comprobantes | [Manual_de_Usuario_v1.4.0.md](Manual_de_Usuario_v1.4.0.md) |
+| Manual completo con ejemplos | [Manual_de_Usuario_v1.5.4.md](Manual_de_Usuario_v1.5.4.md) |
+| Saber qué hay de nuevo | [Release_Notes_v1.5.4.md](Release_Notes_v1.5.4.md) |
+| Aprender a imprimir comprobantes | [Manual_de_Usuario_v1.5.4.md](Manual_de_Usuario_v1.5.4.md) |
 
 ### Soy Personal Técnico
 
 | Necesito... | Documento |
 |-------------|-----------|
-| Entender cómo funciona el código | [Documentacion_Tecnica_v1.4.0.md](Documentacion_Tecnica_v1.4.0.md) |
-| Compilar o modificar la aplicación | [Documentacion_Tecnica_v1.4.0.md](Documentacion_Tecnica_v1.4.0.md) |
-| Solucionar problemas técnicos | [Documentacion_Tecnica_v1.4.0.md](Documentacion_Tecnica_v1.4.0.md) |
-| Usar el script de compilación | [Documentacion_Tecnica_v1.4.0.md](Documentacion_Tecnica_v1.4.0.md) |
+| Entender cómo funciona el código | [Documentacion_Tecnica_v1.5.4.md](Documentacion_Tecnica_v1.5.4.md) |
+| Compilar o modificar la aplicación | [Documentacion_Tecnica_v1.5.4.md](Documentacion_Tecnica_v1.5.4.md) |
+| Solucionar problemas técnicos | [Documentacion_Tecnica_v1.5.4.md](Documentacion_Tecnica_v1.5.4.md) |
+| Usar el script de compilación | [Documentacion_Tecnica_v1.5.4.md](Documentacion_Tecnica_v1.5.4.md) |
 
 ### Soy de Producción/QA/Gerencia
 
@@ -75,7 +75,7 @@
 - ✅ Atajos de teclado
 - ✅ Dónde buscar ayuda
 
-### Manual_de_Usuario_v1.4.0.md
+### Manual_de_Usuario_v1.5.4.md
 - ✅ Introducción y propósito
 - ✅ Instalación paso a paso
 - ✅ Primer uso
@@ -87,7 +87,7 @@
 - ✅ Preguntas frecuentes completas
 - ✅ Información de soporte
 
-### Documentacion_Tecnica_v1.4.0.md
+### Documentacion_Tecnica_v1.5.4.md
 - ✅ Arquitectura del sistema
 - ✅ Requisitos técnicos
 - ✅ Estructura del proyecto
@@ -101,7 +101,7 @@
 - ✅ Solución de problemas técnicos
 - ✅ Historial de versiones
 
-### Release_Notes_v1.4.0.md
+### Release_Notes_v1.5.4.md
 - ✅ Resumen de cambios
 - ✅ Novedades de la versión
 - ✅ Correcciones aplicadas
@@ -150,9 +150,9 @@ C:\Proyectos\Desarrollo\Python\BuscadorValesSCT\
 ├── docs\
 │   ├── README.md                  ← Índice (este archivo)
 │   ├── RESUMEN_RAPIDO.md          ← Referencia rápida
-│   ├── Manual_de_Usuario_v1.4.0.md
-│   ├── Documentacion_Tecnica_v1.4.0.md
-│   ├── Release_Notes_v1.4.0.md
+│   ├── Manual_de_Usuario_v1.5.4.md
+│   ├── Documentacion_Tecnica_v1.5.4.md
+│   ├── Release_Notes_v1.5.4.md
 │   └── ENTREGA_PRODUCCION.md
 └── build_logs\                    ← Logs de compilación
 ```
@@ -181,5 +181,5 @@ Si necesita información adicional:
 ---
 
 **Índice de Documentación**
-**Buscador de Comprobantes SCT v1.4.0**
+**Buscador de Comprobantes SCT v1.5.4**
 **Última actualización:** 8 de abril de 2026

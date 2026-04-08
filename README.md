@@ -43,14 +43,14 @@ python nuevoBuscador.py
 
 | Documento | Descripción |
 |-----------|-------------|
-| [Manual de Usuario](docs/Manual_de_Usuario_v1.4.0.md) | Guía completa de uso, funcionalidades y preguntas frecuentes |
-| [Release Notes](docs/Release_Notes_v1.4.0.md) | Novedades, correcciones y cambios de la versión actual |
+| [Manual de Usuario](docs/Manual_de_Usuario_v1.5.4.md) | Guía completa de uso, funcionalidades y preguntas frecuentes |
+| [Release Notes](docs/Release_Notes_v1.5.4.md) | Novedades, correcciones y cambios de la versión actual |
 
 ### Para Personal Técnico
 
 | Documento | Descripción |
 |-----------|-------------|
-| [Documentación Técnica](docs/Documentacion_Tecnica_v1.4.0.md) | Arquitectura, lógica de búsqueda, compilación y troubleshooting |
+| [Documentación Técnica](docs/Documentacion_Tecnica_v1.5.4.md) | Arquitectura, lógica de búsqueda, compilación y troubleshooting |
 
 ---
 
@@ -94,7 +94,7 @@ python nuevoBuscador.py
 
 ```
 ┌─────────────────────────────────────────────────────────┐
-│     Buscador de Comprobantes de Venta v1.4.0           │
+│     Buscador de Comprobantes de Venta v1.5.4           │
 ├─────────────────────────────────────────────────────────┤
 │  Datos de búsqueda          │  Resultado de la búsqueda │
 │                             │                          │

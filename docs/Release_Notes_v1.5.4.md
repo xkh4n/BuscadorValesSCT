@@ -1,8 +1,8 @@
-# Notas de la Versión 1.4.0
+# Notas de la Versión 1.5.4
 ## Buscador de Comprobantes SCT
 
 **Fecha de lanzamiento:** 8 de abril de 2026
-**Versión:** 1.4.0
+**Versión:** 1.5.4
 **Tipo:** Actualización menor (nueva funcionalidad)
 
 ---
